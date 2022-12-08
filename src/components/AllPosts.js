@@ -1,5 +1,7 @@
 // src/components/AllPosts.js
 
+import imageUrlBuilder from '@sanity/image-url'
+import { logDOM } from '@testing-library/react'
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import sanityClient from '../client.js'
@@ -11,8 +13,14 @@ import sanityClient from '../client.js'
 
 // * sanityClient function *
 //an imported function which  we can dot into neccessary things such as fetch. Our fetch is in *strings* (neccesary data).
+
+const builder = imageUrlBuilder(sanityClient)
+function urlFor(source) {
+  return builder.image(source)
+}
+
 export default function AllPosts() {
-  const [allPostsData, setAllPosts] = useState(null) //1. setting our state
+  const [allPostsData, setAllPosts] = useState() //1. setting our state
 
   useEffect(() => {
     //2. useEffect to fetch our data.
@@ -38,17 +46,20 @@ export default function AllPosts() {
       <h2>Blog Posts</h2>
       <h3>Welcome to my blog posts page!</h3>
       <div>
-        {allPostsData &&
-          allPostsData.map((post, index) => (
-            <Link to={'/' + post.slug.current} key={post.slug.current}>
-              <span key={index}>
-                <img src={post.mainImage.asset.url} alt="" />
-                <span>
-                  <h2>{post.title}</h2>
+        {allPostsData
+          ? allPostsData.map((post, index) => (
+              <Link to={'/' + post.slug.current} key={post.slug.current}>
+                <span key={index}>
+                  {!post.mainImage || (
+                    <img src={urlFor(post.mainImage).width(250).url()} alt="" />
+                  )}
+                  <span>
+                    <h2>{post.title}</h2>
+                  </span>
                 </span>
-              </span>
-            </Link>
-          ))}
+              </Link>
+            ))
+          : null}
       </div>
     </div>
   )
