@@ -44,14 +44,18 @@ export default function OnePost() {
       <div>
         <h2>{postData.title}</h2>
         <div>
-          <img
-            src={urlFor(postData.authorImage).width(100).url()}
-            alt="Author is Kap"
-          />
+          {!postData.authorImage || (
+            <img
+              src={urlFor(postData.authorImage).width(100).url()}
+              alt="Author is Kap"
+            />
+          )}
           <h4>{postData.name}</h4>
         </div>
       </div>
-      <img src={urlFor(postData.mainImage).width(200).url()} alt="" />
+      {!postData.mainImage || (
+        <img src={urlFor(postData.mainImage).width(200).url()} alt="" />
+      )}
       <div>
         <BlockContent
           blocks={postData.body}
