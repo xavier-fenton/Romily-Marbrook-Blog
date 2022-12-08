@@ -1,5 +1,33 @@
+//App.scss
+$font-stack: Helvetica, sans-serif;
+$primary-color: #333;
+
 body {
-  font: 100% Helvetica, sans-serif;
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+ul {
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
+.PostTitles{
   color: #333;
+  text-decoration: none;
+  font-size: 500%;
+  border: solid 1px ;
 }
 
+.Links{
+  text-decoration: none;
+  color: #000;
+  
+}
+
+.BlogPostsTitle{
+  text-align: center;
+}
