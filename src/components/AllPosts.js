@@ -4,6 +4,8 @@ import imageUrlBuilder from '@sanity/image-url'
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import sanityClient from '../client.js'
+import '../App.scss'
+import MainPage from './MainPage.js'
 
 //  How this works:
 //  We need React Hooks = useState to set the state of our data. Then useEffect  to fetch our data.
@@ -41,25 +43,46 @@ export default function AllPosts() {
   }, [])
 
   return (
-    <div>
-      <h2>Blog Posts</h2>
-      <h3>Welcome to my blog posts page!</h3>
+    <>
+      <MainPage />
       <div>
-        {allPostsData
-          ? allPostsData.map((post, index) => (
-              <Link to={'/' + post.slug.current} key={post.slug.current}>
-                <span key={index}>
-                  {!post.mainImage || (
-                    <img src={urlFor(post.mainImage).width(250).url()} alt="" />
-                  )}
-                  <span>
-                    <h2>{post.title}</h2>
-                  </span>
-                </span>
-              </Link>
-            ))
-          : null}
+        <div>
+          <div className="allTitles">
+            {allPostsData
+              ? allPostsData.map((post, index) => (
+                  <Link
+                    className="Links"
+                    to={'/' + post.slug.current}
+                    key={post.slug.current}
+                  >
+
+
+
+
+                    <span key={index}>
+                      <a href={'/' + post.slug.current} className="atag">
+                        <span className="titles">{post.title}</span>
+                        <div className="circle"></div>
+                      </a>
+
+                      {!post.mainImage ||
+                        !(
+                          <img
+                            src={urlFor(post.mainImage).width(250).url()}
+                            alt=""
+                          />
+                        )}
+                    </span>
+
+
+
+                    
+                  </Link>
+                ))
+              : null}
+          </div>
+        </div>
       </div>
-    </div>
+    </>
   )
 }
