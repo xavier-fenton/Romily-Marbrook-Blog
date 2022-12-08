@@ -4,6 +4,7 @@ import imageUrlBuilder from '@sanity/image-url'
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import sanityClient from '../client.js'
+import '../App.css'
 
 //  How this works:
 //  We need React Hooks = useState to set the state of our data. Then useEffect  to fetch our data.
@@ -42,8 +43,8 @@ export default function AllPosts() {
 
   return (
     <div>
-      <h2>Blog Posts</h2>
-      <h3>Welcome to my blog posts page!</h3>
+      <h2 className="BlogPostsTitle">Blog Posts</h2>
+
       <div>
         {allPostsData
           ? allPostsData.map((post, index) => (
