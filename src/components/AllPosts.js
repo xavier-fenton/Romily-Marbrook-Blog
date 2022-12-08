@@ -1,7 +1,6 @@
 // src/components/AllPosts.js
 
 import imageUrlBuilder from '@sanity/image-url'
-import { logDOM } from '@testing-library/react'
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import sanityClient from '../client.js'
