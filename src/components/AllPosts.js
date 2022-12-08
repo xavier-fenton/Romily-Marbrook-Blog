@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import sanityClient from '../client.js'
 import '../App.scss'
+import MainPage from './MainPage.js'
 
 //  How this works:
 //  We need React Hooks = useState to set the state of our data. Then useEffect  to fetch our data.
@@ -42,36 +43,37 @@ export default function AllPosts() {
   }, [])
 
   return (
-    <div>
-      <h2 className="BlogPostsTitle">ROMILYmarbrook</h2>
-
+    <>
+      <MainPage />
       <div>
-        {allPostsData
-          ? allPostsData.map((post, index) => (
-              <Link
-                className="Links"
-                to={'/' + post.slug.current}
-                key={post.slug.current}
-              >
-                <span key={index} className="main-page-container">
-                  <ul>
-                    <a href={'/' + post.slug.current} className="PostTitles">
-                      {post.title}
-                    </a>
-                    {!post.mainImage ||
-                      !(
-                        <img
-                          src={urlFor(post.mainImage).width(250).url()}
-                          alt=""
-                        />
-                      )}
-                    <span></span>
-                  </ul>
-                </span>
-              </Link>
-            ))
-          : null}
+        <div>
+          {allPostsData
+            ? allPostsData.map((post, index) => (
+                <Link
+                  className="Links"
+                  to={'/' + post.slug.current}
+                  key={post.slug.current}
+                >
+                  <span key={index} className="main-page-container">
+                    <ul>
+                      <a href={'/' + post.slug.current} className="PostTitles">
+                        {post.title}
+                      </a>
+                      {!post.mainImage ||
+                        !(
+                          <img
+                            src={urlFor(post.mainImage).width(250).url()}
+                            alt=""
+                          />
+                        )}
+                      <span></span>
+                    </ul>
+                  </span>
+                </Link>
+              ))
+            : null}
+        </div>
       </div>
-    </div>
+    </>
   )
 }
