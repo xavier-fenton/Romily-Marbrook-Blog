@@ -55,28 +55,19 @@ export default function AllPosts() {
                     to={'/' + post.slug.current}
                     key={post.slug.current}
                   >
-
-
-
-
                     <span key={index}>
                       <a href={'/' + post.slug.current} className="atag">
                         <span className="titles">{post.title}</span>
                         <div className="circle"></div>
                       </a>
 
-                      {!post.mainImage ||
-                        !(
-                          <img
-                            src={urlFor(post.mainImage).width(250).url()}
-                            alt=""
-                          />
-                        )}
+                      {!post.mainImage || (
+                        <img
+                          src={urlFor(post.mainImage).width(250).url()}
+                          alt=""
+                        />
+                      )}
                     </span>
-
-
-
-                    
                   </Link>
                 ))
               : null}
