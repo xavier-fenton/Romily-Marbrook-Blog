@@ -9,7 +9,9 @@ const MainMenu = () => {
         <div>
           <p>ROMILYmarbrook</p> {/* Own Component */}
         </div>
-        <AllPosts />
+        <div className="allposts-column">
+          <AllPosts />
+        </div>
         <div>
           <p>Footer component</p>
           {/* Own Component */}
