@@ -4,10 +4,18 @@ import AllPosts from './AllPosts'
 
 const MainMenu = () => {
   return (
-    <>
-      <p>ROMILYmarbrook</p>
-      <AllPosts />
-    </>
+    <div className="main-container">
+      <div className="left-container">
+        <div>
+          <p>ROMILYmarbrook</p>
+        </div>
+        <AllPosts />
+        <div>
+          <p>Footer component</p>
+        </div>
+      </div>
+      <div className="right-container"></div>
+    </div>
   )
 }
 
