@@ -16,6 +16,10 @@
 $font-stack: Helvetica, sans-serif;
 $primary-color: #333;
 
+:root{ //css variables accessable by browser
+  --pdn: 10px; 
+}
+
 body {
   font: 100% $font-stack;
   color: $primary-color;
@@ -71,3 +75,23 @@ body {
 //     background-color: black;
 //   }
 // }
+
+#root{
+  padding: var(--pdn);
+}
+.main-container{
+  display: flex;
+  gap: var(--pdn);
+}
+.left-container{
+  background-color: red;
+  width: 30%;
+  height: calc(100vh - var(--pdn) * 2); //hijack(wat is hijack) height at a later date
+  overflow: hidden;
+  
+  }
+.right-container{
+  width: 70%;
+  background-color: grey;
+  border-radius: 10px; //magic number
+}
