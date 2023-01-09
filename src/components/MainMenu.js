@@ -15,6 +15,24 @@ const MainMenu = () => {
           {/* Own Component */}
         </div>
       </div>
+      {/*
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      */}
       <div className="right-container"></div> {/* Own Component */}
     </div>
   )
