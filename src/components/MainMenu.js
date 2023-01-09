@@ -7,14 +7,15 @@ const MainMenu = () => {
     <div className="main-container">
       <div className="left-container">
         <div>
-          <p>ROMILYmarbrook</p>
+          <p>ROMILYmarbrook</p> {/* Own Component */}
         </div>
         <AllPosts />
         <div>
           <p>Footer component</p>
+          {/* Own Component */}
         </div>
       </div>
-      <div className="right-container"></div>
+      <div className="right-container"></div> {/* Own Component */}
     </div>
   )
 }
