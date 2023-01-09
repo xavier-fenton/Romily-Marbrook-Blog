@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import sanityClient from '../client.js'
 import '../App.scss'
-import MainPage from './MainPage.js'
+import MainPage from './MainMenu.js'
 
 //  How this works:
 //  We need React Hooks = useState to set the state of our data. Then useEffect  to fetch our data.
