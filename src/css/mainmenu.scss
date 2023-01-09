@@ -1,4 +1,17 @@
-@font-face {
-  font-family: Rubilk;
-  src: url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+
+.main-container{
+  display: flex;
+  gap: var(--pdn);
+}
+.left-container{
+  background-color: red;
+  width: 30%;
+  height: calc(100vh - var(--pdn) * 2); //hijack(wat is hijack) height at a later date
+  overflow: hidden;
+  
+  }
+.right-container{
+  width: 70%;
+  background-color: grey;
+  border-radius: 10px; //magic number
 }
