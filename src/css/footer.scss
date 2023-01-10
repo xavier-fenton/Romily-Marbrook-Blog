@@ -1,4 +1,18 @@
 
   .footer-component{
-    border: dashed black 2px;
+    display: flex;
+    // border: dashed black 2px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-top: solid var(--gryline) 1px;
+    flex-basis: 15%;
+    
   }
+.footer-content{
+  height: 1em;
+
+  // border-top: solid black 1px;
+  // border-bottom: solid var(--gryline) 1px;
+  // padding: 1%;
+}
