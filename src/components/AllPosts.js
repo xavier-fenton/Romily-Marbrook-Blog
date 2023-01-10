@@ -43,35 +43,26 @@ export default function AllPosts() {
 
   return (
     <>
-      <div>
-        <div>
-          <div className="allTitles">
-            {allPostsData
-              ? allPostsData.map((post, index) => (
-                  <Link
-                    className="Links"
-                    to={'/' + post.slug.current}
-                    key={post.slug.current}
-                  >
-                    <span key={index}>
-                      <a href={'/' + post.slug.current} className="atag">
-                        <span className="titles">{post.title}</span>
-                        <div className="circle"></div>
-                      </a>
+      {allPostsData
+        ? allPostsData.map((post, index) => (
+            <Link
+              className="Links"
+              to={'/' + post.slug.current}
+              key={post.slug.current}
+            >
+              <span key={index}>
+                <a href={'/' + post.slug.current} className="atag">
+                  <span className="titles">{post.title}</span>
+                  <div className="circle"></div>
+                </a>
 
-                      {!post.mainImage || (
-                        <img
-                          src={urlFor(post.mainImage).width(250).url()}
-                          alt=""
-                        />
-                      )}
-                    </span>
-                  </Link>
-                ))
-              : null}
-          </div>
-        </div>
-      </div>
+                {!post.mainImage || (
+                  <img src={urlFor(post.mainImage).width(250).url()} alt="" />
+                )}
+              </span>
+            </Link>
+          ))
+        : null}
     </>
   )
 }

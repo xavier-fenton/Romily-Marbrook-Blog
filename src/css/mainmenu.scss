@@ -1,10 +1,69 @@
-@font-face {
-  font-family: Rubilk;
-  src: url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+
+.main-container{
+  display: flex;
+  gap: var(--pdn);
+  background-color:#F4F2F2;
 }
-p{
-  font-family: 'Rubilk', sans-serif;
-  margin: auto;
-  // font-size: 500px;
-  font-size: 400%;
+
+
+
+
+
+
+
+.left-container{
+  
+  width: 30%;
+  height: calc(100vh - var(--pdn) * 2); //hijack(wat is hijack) height at a later date
+  overflow: hidden;
+  // border: dashed black 2px;
+  display: flex;
+  flex-direction: column;
+  padding: var(--pdn);
+ 
+
+
+  .left-cont-title{
+    font-size: 3.75rem;
+    // border: dashed black 2px;
+    color: #9E9E9E;
+  }
+
+  .allposts-column{
+    // border: dashed black 2px;
+    flex-basis: 100%;
+    // background-color:wheat;
+    position: relative;
+    padding-top: var(--pdn);
+  }
+  .fade{
+    height: 3em;
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+
+  .footer-component{
+    border: dashed black 2px;
+  }
+
+  }
+  
+
+
+
+
+
+
+
+
+
+.right-container{
+  width: 70%;
+  background-color: grey;
+  border-radius: 10px; //magic number
 }
