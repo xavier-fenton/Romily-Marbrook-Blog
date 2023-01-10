@@ -2,7 +2,7 @@
 .main-container{
   display: flex;
   gap: var(--pdn);
-  
+  background-color:#F4F2F2;
 }
 
 
@@ -12,11 +12,11 @@
 
 
 .left-container{
-  background-color: red;
+  
   width: 30%;
   height: calc(100vh - var(--pdn) * 2); //hijack(wat is hijack) height at a later date
   overflow: hidden;
-  border: dashed black 2px;
+  // border: dashed black 2px;
   display: flex;
   flex-direction: column;
   padding: var(--pdn);
@@ -25,14 +25,14 @@
 
   .left-cont-title{
     font-size: 3.75rem;
-    border: dashed black 2px;
+    // border: dashed black 2px;
     
   }
 
   .allposts-column{
-    border: dashed black 2px;
+    // border: dashed black 2px;
     flex-basis: 100%;
-    background-color:wheat;
+    // background-color:wheat;
     position: relative;
     padding-top: var(--pdn);
   }
