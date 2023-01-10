@@ -5,14 +5,15 @@
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: space-evenly;
-    border-top: solid var(--gryline) 1px;
+ 
     flex-basis: 15%;
-    
+    .footer-dataline{
+      display: grid;
+      gap: var(--pdn);
+      grid-template-columns: repeat(2, 1fr);
+      border-top: solid var(--gryline) 1px;
+      padding-top: 3px;
+      padding-bottom: 2px;
+    }
   }
-.footer-content{
-  height: 1em;
-
-  // border-top: solid black 1px;
-  // border-bottom: solid var(--gryline) 1px;
-  // padding: 1%;
-}
+  
