@@ -1,6 +1,8 @@
 import React from 'react'
 import '../css/mainmenu.scss'
+import '../css/leftColumnsection.scss'
 import AllPosts from './AllPosts'
+import Footer from './Footer'
 
 const MainMenu = () => {
   return (
@@ -15,10 +17,7 @@ const MainMenu = () => {
           <AllPosts />
         </div>
 
-        <div className="footer-component">
-          <p>Footer component</p>
-          {/* Own Component */}
-        </div>
+        <Footer />
       </div>
       {/*
       

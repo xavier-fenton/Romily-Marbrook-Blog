@@ -1,0 +1,19 @@
+
+  .footer-component{
+    display: flex;
+    // border: dashed black 2px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-evenly;
+ 
+    flex-basis: 15%;
+    .footer-dataline{
+      display: grid;
+      gap: var(--pdn);
+      grid-template-columns: repeat(2, 1fr);
+      border-top: solid var(--gryline) 1px;
+      padding-top: 3px;
+      padding-bottom: 2px;
+    }
+  }
+  
