@@ -52,8 +52,10 @@ export default function AllPosts() {
             >
               <span key={index}>
                 <a href={'/' + post.slug.current} className="atag">
-                  <span className="titles">{post.title}</span>
-                  <div className="circle"></div>
+                  <div className="left-col-dataline">
+                    <div className="title-col-content">{post.title}</div>
+                    <div className="title-col-content"> Date Added</div>
+                  </div>
                 </a>
 
                 {!post.mainImage || (

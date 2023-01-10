@@ -3,7 +3,7 @@
   width: 30%;
   height: calc(100vh - var(--pdn) * 2); //hijack(wat is hijack) height at a later date
   overflow: hidden;
-  // border: dashed black 2px;
+  
   display: flex;
   flex-direction: column;
   padding: var(--pdn);
@@ -12,17 +12,30 @@
 
   .left-cont-title{
     font-size: 3.75rem;
-    // border: dashed black 2px;
+    
     color: #9E9E9E;
   }
 
   .allposts-column{
-    // border: dashed black 2px;
+
     flex-basis: 100%;
-    // background-color:wheat;
     position: relative;
     padding-top: var(--pdn);
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+   .left-col-dataline{
+    display: grid;
+      gap: var(--pdn);
+      grid-template-columns: repeat(2, 1fr);
+      border-top: solid var(--gryline) 1px;
+      padding-top: 3px;
+      padding-bottom: 2px;
+   }
+
   }
+  
   .fade{
     height: 3em;
     background: rgb(255,255,255);
