@@ -17,7 +17,7 @@ const Footer = () => {
       </div>
       <div className="footer-dataline">
         <p className="footer-content">Instagram</p>
-        <p className="footer-content">@rom1ly</p>{' '}
+        <p className="footer-content">@rom1ly</p>
         {/* could possibly have instagram handle changable with changing data via cms*/}
       </div>
     </div>
