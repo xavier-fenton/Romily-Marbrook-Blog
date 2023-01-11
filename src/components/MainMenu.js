@@ -2,7 +2,7 @@ import React from 'react'
 import '../css/mainmenu.scss'
 import '../css/leftColumnsection.scss'
 import AllPosts from './AllPosts'
-import Footer from './Footer'
+import Footer from './subcomponents/Footer'
 
 const MainMenu = () => {
   return (

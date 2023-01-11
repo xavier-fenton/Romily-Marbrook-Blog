@@ -12,10 +12,9 @@ function urlFor(source) {
 }
 
 export default function AllPosts() {
-  const [allPostsData, setAllPosts] = useState() 
+  const [allPostsData, setAllPosts] = useState()
 
   useEffect(() => {
-    
     sanityClient
       .fetch(
         `*[_type == "post"]{ 
@@ -59,8 +58,6 @@ export default function AllPosts() {
                     <div className="title-col-content">{post.title}</div>
                     <div className="title-col-content">
                       {post.createdAtFormatted}
-
-                      
                     </div>
                   </div>
                 </span>
