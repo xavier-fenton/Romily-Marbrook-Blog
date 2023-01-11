@@ -39,7 +39,6 @@ export default function AllPosts() {
     }`
       )
       .then((data) => setAllPosts(data))
-
       .catch(console.error)
   }, [])
 
@@ -57,7 +56,8 @@ export default function AllPosts() {
                   <div className="left-col-dataline">
                     <div className="title-col-content">{post.title}</div>
                     <div className="title-col-content">
-                      {post._createdAt}{' '}
+                      {post._createdAt}
+
                       {/* make a funtion which converts the date*/}
                     </div>
                   </div>
