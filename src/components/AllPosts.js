@@ -30,6 +30,7 @@ export default function AllPosts() {
         title, 
         slug,
         _createdAt,
+  
         mainImage{
           asset->{
           _id,
@@ -38,8 +39,16 @@ export default function AllPosts() {
       }
     }`
       )
-      .then((data) => setAllPosts(data))
-
+      .then((data) => {
+        data.forEach((item) => {
+          item.createdAtFormatted = new Intl.DateTimeFormat('en-US', {
+            day: 'numeric',
+            month: 'numeric',
+            year: 'numeric',
+          }).format(new Date(item._createdAt))
+        })
+        setAllPosts(data)
+      })
       .catch(console.error)
   }, [])
 
@@ -57,7 +66,8 @@ export default function AllPosts() {
                   <div className="left-col-dataline">
                     <div className="title-col-content">{post.title}</div>
                     <div className="title-col-content">
-                      {post._createdAt}{' '}
+                      {post.createdAtFormatted}
+
                       {/* make a funtion which converts the date*/}
                     </div>
                   </div>
