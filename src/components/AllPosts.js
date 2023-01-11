@@ -56,7 +56,10 @@ export default function AllPosts() {
                 <span href={'/' + post.slug.current} className="atag">
                   <div className="left-col-dataline">
                     <div className="title-col-content">{post.title}</div>
-                    <div className="title-col-content">{post._createdAt}</div>
+                    <div className="title-col-content">
+                      {post._createdAt}{' '}
+                      {/* make a funtion which converts the date*/}
+                    </div>
                   </div>
                 </span>
 
