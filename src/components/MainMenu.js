@@ -3,13 +3,14 @@ import '../css/mainmenu.scss'
 import '../css/leftColumnsection.scss'
 import AllPosts from './AllPosts'
 import Footer from './subcomponents/Footer'
+import Header from './subcomponents/Header'
 
 const MainMenu = () => {
   return (
     <div className="main-container">
       <div className="left-container">
         <div>
-          <p className="left-cont-title">ROMILYmarbrook</p>
+          <Header />
           {/* Own Component */}
         </div>
         <div className="allposts-column">
