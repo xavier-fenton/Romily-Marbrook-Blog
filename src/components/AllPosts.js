@@ -29,6 +29,7 @@ export default function AllPosts() {
         `*[_type == "post"]{ 
         title, 
         slug,
+        _createdAt,
         mainImage{
           asset->{
           _id,
@@ -38,6 +39,7 @@ export default function AllPosts() {
     }`
       )
       .then((data) => setAllPosts(data))
+
       .catch(console.error)
   }, [])
 
@@ -54,7 +56,7 @@ export default function AllPosts() {
                 <span href={'/' + post.slug.current} className="atag">
                   <div className="left-col-dataline">
                     <div className="title-col-content">{post.title}</div>
-                    <div className="title-col-content"> Date Added</div>
+                    <div className="title-col-content">{post._createdAt}</div>
                   </div>
                 </span>
 
