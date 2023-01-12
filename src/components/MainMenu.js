@@ -4,6 +4,8 @@ import '../css/leftColumnsection.scss'
 import AllPosts from './AllPosts'
 import Footer from './subcomponents/Footer'
 import Header from './subcomponents/Header'
+import { Routes, Route } from 'react-router-dom'
+import OnePost from './OnePost'
 
 const MainMenu = () => {
   return (
@@ -20,25 +22,13 @@ const MainMenu = () => {
 
         <Footer />
       </div>
-      {/*
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      */}
-      <div className="right-container"></div> {/* Own Component */}
+
+      <div className="right-container">
+        <Routes>
+          <Route element={<OnePost />} path="/:slug" />
+        </Routes>
+      </div>
+      {/* Own Component */}
     </div>
   )
 }
