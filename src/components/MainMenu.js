@@ -24,6 +24,7 @@ const MainMenu = () => {
       </div>
 
       <div className="right-container">
+        <div className="inner-shadow"></div>
         <Routes>
           <Route element={<OnePost />} path="/:slug" />
         </Routes>
