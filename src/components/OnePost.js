@@ -40,7 +40,7 @@ export default function OnePost() {
   if (!postData) return <div>Loading...</div>
 
   return (
-    <div>
+    <div className="post-wrapper" key={postData.title}>
       <div>
         <h2>{postData.title}</h2>
         <div>
