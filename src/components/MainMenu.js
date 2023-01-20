@@ -6,6 +6,7 @@ import Footer from './subcomponents/Footer'
 import Header from './subcomponents/Header'
 import { Routes, Route } from 'react-router-dom'
 import OnePost from './OnePost'
+import '../css/right-container.scss'
 
 const MainMenu = () => {
   return (
