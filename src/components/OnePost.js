@@ -41,7 +41,10 @@ export default function OnePost() {
 
   return (
     <div className="post-wrapper" key={postData.title}>
-      <div className="dot"></div>
+      <a href="/">
+        <div className="close-tab"></div>
+      </a>
+
       <div>
         <h2>{postData.title}</h2>
         <div>
