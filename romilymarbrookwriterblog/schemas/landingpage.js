@@ -4,7 +4,7 @@ export default {
   title: 'Landing Page',
   fields: [
     {
-      name: 'name',
+      name: 'title',
       type: 'string',
       title: 'Heading',
     },
