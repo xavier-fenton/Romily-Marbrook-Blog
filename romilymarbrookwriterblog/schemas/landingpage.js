@@ -6,7 +6,17 @@ export default {
     {
       name: 'name',
       type: 'string',
-      title: 'Name',
+      title: 'Heading',
+    },
+    {
+      name: 'publishedAt',
+      title: 'Published at',
+      type: 'datetime',
+    },
+    {
+      name: 'body',
+      title: 'Body',
+      type: 'blockContent',
     },
   ],
 }
