@@ -38,10 +38,10 @@ export default function OnePost() {
       .catch(console.error)
   }, [slug])
 
-  if (!postData)
+  if (!postData && <LandingPage />)
     return (
       <div>
-        <LandingPage /> {/* PLACE HOLDER MAKE THIS MORE SEAMLESS*/}
+        {<LandingPage />} {/* PLACE HOLDER MAKE THIS MORE SEAMLESS*/}
       </div>
     )
 
