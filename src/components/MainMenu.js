@@ -6,6 +6,7 @@ import Footer from './subcomponents/Footer'
 import Header from './subcomponents/Header'
 import { Routes, Route } from 'react-router-dom'
 import OnePost from './OnePost'
+import LandingPage from './subcomponents/LandingPage'
 
 const MainMenu = () => {
   return (
@@ -24,6 +25,7 @@ const MainMenu = () => {
       </div>
 
       <div className="right-container">
+        <LandingPage />
         <div className="inner-shadow"></div>
         <Routes>
           <Route element={<OnePost />} path="/:slug" />
