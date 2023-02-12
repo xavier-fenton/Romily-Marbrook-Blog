@@ -26,10 +26,11 @@
       gap: var(--pdn);
       grid-template-columns: repeat(2, 1fr);
       border-top: solid var(--gryline) 1px;
-      padding-top: 3px;
-      padding-bottom: 2px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      
    }
-
+   
   }
   
   .fade{
