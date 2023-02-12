@@ -59,11 +59,11 @@ export default function AllPosts() {
                     {post.createdAtFormatted}
                   </div>
                 </div>
-
-                {!post.mainImage || (
-                  <img src={urlFor(post.mainImage).width(250).url()} alt="" />
-                )}
               </span>
+
+              {!post.mainImage || (
+                <img src={urlFor(post.mainImage).width(250).url()} alt="" />
+              )}
             </Link>
           ))
         : null}
