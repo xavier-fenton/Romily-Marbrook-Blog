@@ -1,0 +1,47 @@
+.left-container{
+  
+  width: 30%;
+  height: calc(100vh - var(--pdn) * 2); //hijack(wat is hijack) height at a later date
+  overflow: hidden;
+  
+  display: flex;
+  flex-direction: column;
+  padding: var(--pdn);
+ 
+
+
+  
+
+  .allposts-column{
+
+    flex-basis: 100%;
+    position: relative;
+    padding-top: var(--pdn);
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+   .left-col-dataline{
+    display: grid;
+      gap: var(--pdn);
+      grid-template-columns: repeat(2, 1fr);
+      border-top: solid var(--gryline) 1px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      
+   }
+   
+  }
+  
+  .fade{
+    height: 3em;
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+
+  }

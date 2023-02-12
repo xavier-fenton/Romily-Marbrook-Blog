@@ -1,13 +1,19 @@
 import React from 'react'
 import '../css/mainmenu.scss'
+import '../css/leftColumnsection.scss'
 import AllPosts from './AllPosts'
+import Footer from './subcomponents/Footer'
+import Header from './subcomponents/Header'
+import { Routes, Route } from 'react-router-dom'
+import OnePost from './OnePost'
+import LandingPage from './subcomponents/LandingPage'
 
 const MainMenu = () => {
   return (
     <div className="main-container">
       <div className="left-container">
         <div>
-          <p className="left-cont-title">ROMILYmarbrook</p>
+          <Header />
           {/* Own Component */}
         </div>
         <div className="allposts-column">
@@ -15,30 +21,17 @@ const MainMenu = () => {
           <AllPosts />
         </div>
 
-        <div className="footer-component">
-          <p>Footer component</p>
-          {/* Own Component */}
-        </div>
+        <Footer />
       </div>
-      {/*
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      */}
-      <div className="right-container"></div> {/* Own Component */}
+
+      <div className="right-container">
+        <LandingPage />
+        <div className="inner-shadow"></div>
+        <Routes>
+          <Route element={<OnePost />} path="/:slug" />
+        </Routes>
+      </div>
+      {/* Own Component */}
     </div>
   )
 }

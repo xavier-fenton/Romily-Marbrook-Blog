@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom'
 import sanityClient from '../client.js'
 import BlockContent from '@sanity/block-content-to-react'
 import imageUrlBuilder from '@sanity/image-url'
+import LandingPage from './subcomponents/LandingPage.js'
 
 const builder = imageUrlBuilder(sanityClient)
 function urlFor(source) {
@@ -37,10 +38,15 @@ export default function OnePost() {
       .catch(console.error)
   }, [slug])
 
-  if (!postData) return <div>Loading...</div>
+  if (!postData && <LandingPage />)
+    return (
+      <div>
+        {<LandingPage />} {/* PLACE HOLDER MAKE THIS MORE SEAMLESS*/}
+      </div>
+    )
 
   return (
-    <div>
+    <div className="post-wrapper" key={postData.title}>
       <div>
         <h2>{postData.title}</h2>
         <div>
