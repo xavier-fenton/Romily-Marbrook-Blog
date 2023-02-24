@@ -2,7 +2,7 @@
 
 import imageUrlBuilder from '@sanity/image-url'
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import sanityClient from '../client.js'
 import '../App.scss'
 
@@ -12,6 +12,7 @@ function urlFor(source) {
 }
 
 export default function AllPosts() {
+  const location = useLocation()
   const [allPostsData, setAllPosts] = useState()
 
   useEffect(() => {
@@ -46,26 +47,33 @@ export default function AllPosts() {
   return (
     <>
       {allPostsData
-        ? allPostsData.map((post, index) => (
-            <Link
-              className="Links"
-              to={'/' + post.slug.current}
-              key={post.slug.current}
-            >
-              <span key={index}>
-                <div className="left-col-dataline">
-                  <div className="title-col-content">{post.title}</div>
-                  <div className="title-col-content">
-                    {post.createdAtFormatted}
-                  </div>
-                </div>
-              </span>
+        ? allPostsData.map((post, index) => {
+            const to = '/' + post.slug.current
+            const active = location.pathname === to
 
-              {!post.mainImage || (
-                <img src={urlFor(post.mainImage).width(250).url()} alt="" />
-              )}
-            </Link>
-          ))
+            return (
+              <Link className="Links" to={to} key={post.slug.current}>
+                <span key={index}>
+                  <div
+                    className={`left-col-dataline ${
+                      active ? 'active' : 'hover-1'
+                    } `}
+                    // onMouseEnter={setColor}
+                    id="leftcoldataline"
+                  >
+                    <div className="title-col-content">{post.title}</div>
+                    <div className="title-col-content">
+                      {post.createdAtFormatted}
+                    </div>
+                  </div>
+                </span>
+
+                {!post.mainImage || (
+                  <img src={urlFor(post.mainImage).width(250).url()} alt="" />
+                )}
+              </Link>
+            )
+          })
         : null}
     </>
   )
