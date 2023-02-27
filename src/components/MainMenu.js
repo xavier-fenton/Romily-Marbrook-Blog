@@ -24,12 +24,15 @@ const MainMenu = () => {
         <Footer />
       </div>
 
-      <div className="right-container">
-        <LandingPage />
-        <div className="inner-shadow"></div>
-        <Routes>
-          <Route element={<OnePost />} path="/:slug" />
-        </Routes>
+      <div className="right-side">
+        <div className="right-container">
+          <LandingPage />
+          <div className="inner-shadow"></div>
+          <Routes>
+            <Route element={<OnePost />} path="/:slug" />
+          </Routes>
+        </div>
+        <div className="about-section"></div>
       </div>
       {/* Own Component */}
     </div>
