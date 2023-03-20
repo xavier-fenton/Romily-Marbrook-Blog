@@ -38,25 +38,7 @@ export default function OnePost() {
       .catch(console.error)
   }, [slug])
 
-  if (!postData && <LandingPage />)
-    return (
-      <>
-        {/* <LandingPage style={{ display: 'none' }} /> */}
-        <div
-          class="tenor-gif-embed"
-          data-postid="15764824"
-          data-share-method="host"
-          data-aspect-ratio="1.1985"
-          data-width="100%"
-        >
-          <a href="https://tenor.com/view/kate-wings-fly-white-angel-wings-gif-15764824">
-            Kate Wings Sticker
-          </a>
-          from{' '}
-          <a href="https://tenor.com/search/kate-stickers">Kate Stickers</a>
-        </div>
-      </>
-    )
+  if (!postData && <LandingPage />) return <div>loading....</div>
 
   return (
     <div className="post-wrapper" key={postData.title}>
