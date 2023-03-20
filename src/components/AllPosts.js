@@ -15,6 +15,13 @@ export default function AllPosts() {
   const location = useLocation()
   const [allPostsData, setAllPosts] = useState()
 
+  function handleClick() {
+    let doc = document.getElementById('land-cont')
+    doc.style.display = 'none'
+    let gifLoader = document.getElementById('gif-loader')
+    gifLoader.style.display = 'block'
+  }
+
   useEffect(() => {
     sanityClient
       .fetch(
@@ -60,6 +67,7 @@ export default function AllPosts() {
                     } `}
                     // onMouseEnter={setColor}
                     id="leftcoldataline"
+                    onClick={handleClick}
                   >
                     <div className="title-col-content">{post.title}</div>
                     <div className="title-col-content">
