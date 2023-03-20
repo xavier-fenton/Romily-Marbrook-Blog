@@ -17,9 +17,13 @@ export default function AllPosts() {
 
   function handleClick() {
     let doc = document.getElementById('land-cont')
+    // console.log(doc)
     doc.style.display = 'none'
     let gifLoader = document.getElementById('gif-loader')
     gifLoader.style.display = 'block'
+
+    let leftDoc = document.getElementById('left-contain')
+    leftDoc.style.width = '8%'
   }
 
   useEffect(() => {
@@ -39,13 +43,6 @@ export default function AllPosts() {
     }`
       )
       .then((data) => {
-        data.forEach((item) => {
-          item.createdAtFormatted = new Intl.DateTimeFormat('en-US', {
-            day: 'numeric',
-            month: 'numeric',
-            year: 'numeric',
-          }).format(new Date(item._createdAt))
-        })
         setAllPosts(data)
       })
       .catch(console.error)
@@ -65,14 +62,10 @@ export default function AllPosts() {
                     className={`left-col-dataline ${
                       active ? 'active' : 'hover-1'
                     } `}
-                    // onMouseEnter={setColor}
                     id="leftcoldataline"
                     onClick={handleClick}
                   >
                     <div className="title-col-content">{post.title}</div>
-                    <div className="title-col-content">
-                      {post.createdAtFormatted}
-                    </div>
                   </div>
                 </span>
 
