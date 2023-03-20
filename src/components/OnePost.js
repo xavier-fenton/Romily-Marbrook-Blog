@@ -40,9 +40,22 @@ export default function OnePost() {
 
   if (!postData && <LandingPage />)
     return (
-      <div>
-        {<LandingPage />} {/* PLACE HOLDER MAKE THIS MORE SEAMLESS*/}
-      </div>
+      <>
+        {/* <LandingPage style={{ display: 'none' }} /> */}
+        <div
+          class="tenor-gif-embed"
+          data-postid="15764824"
+          data-share-method="host"
+          data-aspect-ratio="1.1985"
+          data-width="100%"
+        >
+          <a href="https://tenor.com/view/kate-wings-fly-white-angel-wings-gif-15764824">
+            Kate Wings Sticker
+          </a>
+          from{' '}
+          <a href="https://tenor.com/search/kate-stickers">Kate Stickers</a>
+        </div>
+      </>
     )
 
   return (
