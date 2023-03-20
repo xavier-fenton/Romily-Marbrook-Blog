@@ -29,10 +29,19 @@ const LandingPage = () => {
 
   return (
     <>
-      <h1 className="landing-title">
+      <h1 className="landing-title" id="land-title">
         <center>{postData.title}</center>
       </h1>
-      <div className="landing-page-content">
+      <div id="gif-loader" style={{ display: 'none' }}>
+        <center>
+          <img
+            src="https://media.tenor.com/ZtT32tet9K8AAAAi/kate-wings.gif"
+            width="400px"
+            alt="angel-wings"
+          />
+        </center>
+      </div>
+      <div className="landing-page-content" id="land-cont">
         <BlockContent
           blocks={postData.body}
           projectId={sanityClient.clientConfig.projectId}
