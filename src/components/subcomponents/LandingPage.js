@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import sanityClient from '../../client'
 import BlockContent from '@sanity/block-content-to-react'
-import imageUrlBuilder from '@sanity/image-url'
+// import imageUrlBuilder from '@sanity/image-url'
 import '../../css/landing.scss'
 
-const builder = imageUrlBuilder(sanityClient)
-function urlFor(source) {
-  return builder.image(source)
-}
+// const builder = imageUrlBuilder(sanityClient)
+// function urlFor(source) {
+//   return builder.image(source)
+// }
 
 const LandingPage = () => {
   const [postData, setPostData] = useState(null)
