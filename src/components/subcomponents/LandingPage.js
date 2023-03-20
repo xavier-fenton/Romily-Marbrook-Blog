@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import sanityClient from '../../client'
 import BlockContent from '@sanity/block-content-to-react'
 import imageUrlBuilder from '@sanity/image-url'
+import '../../css/landing.scss'
 
 const builder = imageUrlBuilder(sanityClient)
 function urlFor(source) {
@@ -28,8 +29,10 @@ const LandingPage = () => {
 
   return (
     <>
-      <h1>{postData.title}</h1>
-      <div>
+      <h1 className="landing-title">
+        <center>{postData.title}</center>
+      </h1>
+      <div className="landing-page-content">
         <BlockContent
           blocks={postData.body}
           projectId={sanityClient.clientConfig.projectId}
