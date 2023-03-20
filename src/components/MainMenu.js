@@ -10,32 +10,33 @@ import LandingPage from './subcomponents/LandingPage'
 
 const MainMenu = () => {
   return (
-    <div className="main-container">
-      <div className="left-container">
-        <div>
-          <Header />
-          {/* Own Component */}
-        </div>
-        <div className="allposts-column">
-          <div className="fade"></div>
-          <AllPosts />
+    <>
+      <div className="main-container">
+        <div className="left-container">
+          <div>
+            <Header />
+            {/* Own Component */}
+          </div>
+          <div className="allposts-column">
+            <div className="fade"></div>
+            <AllPosts />
+          </div>
         </div>
 
-        <Footer />
-      </div>
-
-      <div className="right-side">
-        <div className="right-container">
-          <LandingPage />
-          <div className="inner-shadow"></div>
-          <Routes>
-            <Route element={<OnePost />} path="/:slug" />
-          </Routes>
+        <div className="right-side">
+          <div className="right-container">
+            <LandingPage />
+            <div className="inner-shadow"></div>
+            <Routes>
+              <Route element={<OnePost />} path="/:slug" />
+            </Routes>
+          </div>
+          {/* <div className="about-section"></div> */}
         </div>
-        <div className="about-section"></div>
+        {/* Own Component<Footer /> */}
       </div>
-      {/* Own Component */}
-    </div>
+      <Footer />
+    </>
   )
 }
 
