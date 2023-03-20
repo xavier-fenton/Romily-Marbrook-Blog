@@ -25,7 +25,18 @@ const LandingPage = () => {
       .catch(console.error)
   }, [])
 
-  if (!postData) return <div>loading....</div>
+  if (!postData)
+    return (
+      <div id="gif-loader" style={{ marginTop: '250px' }}>
+        <center>
+          <img
+            src="https://media.tenor.com/ZtT32tet9K8AAAAi/kate-wings.gif"
+            width="400px"
+            alt="angel-wings"
+          />
+        </center>
+      </div>
+    )
 
   return (
     <>
