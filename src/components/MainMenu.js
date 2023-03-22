@@ -12,7 +12,7 @@ const MainMenu = () => {
   return (
     <>
       <div className="main-container">
-        <div className="left-container">
+        <div className="left-container" id="left-contain">
           <div>
             <Header />
             {/* Own Component */}
