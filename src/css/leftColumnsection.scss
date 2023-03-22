@@ -1,18 +1,25 @@
 .left-container{
   
-  width: 30%;
+  width: 450px;
   height: calc(100vh - var(--pdn) * 2); //hijack(wat is hijack) height at a later date
   overflow: hidden;
   
   display: flex;
   flex-direction: column;
   padding: var(--pdn);
+  transition: ease all 0.3s;
   
   
   
+  .left-cont-title{
+    font-size: 3.75rem;
+    // border: dashed black 2px;
+    color: #9E9E9E;
+  }
   
   .allposts-column{
-    
+    // min-width: 450px;
+    overflow: hidden;
     flex-basis: 100%;
     position: relative;
     padding-top: var(--pdn);
