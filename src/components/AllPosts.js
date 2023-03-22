@@ -14,6 +14,7 @@ function urlFor(source) {
 export default function AllPosts() {
   const location = useLocation()
   const [allPostsData, setAllPosts] = useState()
+  const [boolState, setBoolState] = useState(false)
 
   function handleClick() {
     let doc = document.getElementById('land-cont')
@@ -21,9 +22,15 @@ export default function AllPosts() {
     doc.style.display = 'none'
     let gifLoader = document.getElementById('gif-loader')
     gifLoader.style.display = 'block'
-
     let leftDoc = document.getElementById('left-contain')
-    leftDoc.style.width = '8%'
+
+    if (boolState === false) {
+      leftDoc.style.width = '8%'
+      setBoolState(true)
+    } else if (boolState === true) {
+      leftDoc.style.width = '450px'
+      setBoolState(false)
+    }
   }
 
   useEffect(() => {
@@ -64,6 +71,7 @@ export default function AllPosts() {
                     } `}
                     id="leftcoldataline"
                     onClick={handleClick}
+                    bool={boolState}
                   >
                     <div className="title-col-content">{post.title}</div>
                   </div>
