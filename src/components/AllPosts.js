@@ -14,7 +14,7 @@ function urlFor(source) {
 export default function AllPosts() {
   const location = useLocation()
   const [allPostsData, setAllPosts] = useState()
-  const [boolState, setBoolState] = useState(false)
+  const [boolState, setBoolState] = useState('false')
 
   function handleClick() {
     let doc = document.getElementById('land-cont')
@@ -24,12 +24,12 @@ export default function AllPosts() {
     gifLoader.style.display = 'block'
     let leftDoc = document.getElementById('left-contain')
 
-    if (boolState === false) {
+    if (boolState === 'false') {
       leftDoc.style.width = '8%'
-      setBoolState(true)
-    } else if (boolState === true) {
+      setBoolState('true')
+    } else if (boolState === 'true') {
       leftDoc.style.width = '450px'
-      setBoolState(false)
+      setBoolState('false')
     }
   }
 
