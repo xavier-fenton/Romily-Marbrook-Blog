@@ -41,29 +41,31 @@ export default function OnePost() {
   if (!postData && <LandingPage />) return <div>loading....</div>
 
   return (
-    <div className="post-wrapper" key={postData.title}>
-      <div>
-        <h2>{postData.title}</h2>
+    <>
+      <div className="post-wrapper " key={postData.title} id="rightcontain">
         <div>
-          {!postData.authorImage || (
-            <img
-              src={urlFor(postData.authorImage).width(100).url()}
-              alt="Author is Kap"
-            />
-          )}
-          <h4>{postData.name}</h4>
+          <h2>{postData.title}</h2>
+          <div>
+            {!postData.authorImage || (
+              <img
+                src={urlFor(postData.authorImage).width(100).url()}
+                alt="Author is Kap"
+              />
+            )}
+            <h4>{postData.name}</h4>
+          </div>
+        </div>
+        {!postData.mainImage || (
+          <img src={urlFor(postData.mainImage).width(200).url()} alt="" />
+        )}
+        <div>
+          <BlockContent
+            blocks={postData.body}
+            projectId={sanityClient.clientConfig.projectId}
+            dataset={sanityClient.clientConfig.dataset}
+          />
         </div>
       </div>
-      {!postData.mainImage || (
-        <img src={urlFor(postData.mainImage).width(200).url()} alt="" />
-      )}
-      <div>
-        <BlockContent
-          blocks={postData.body}
-          projectId={sanityClient.clientConfig.projectId}
-          dataset={sanityClient.clientConfig.dataset}
-        />
-      </div>
-    </div>
+    </>
   )
 }
